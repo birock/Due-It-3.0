@@ -1,0 +1,6 @@
+framework module Pods_Due_ItTests {
+  umbrella header "Pods-Due ItTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
