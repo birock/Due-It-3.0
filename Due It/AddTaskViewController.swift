@@ -85,73 +85,22 @@ class AddTaskViewController: UIViewController {
         }
         
     }
-    /*
-    //Add to DB
-    func addToDataBase(){
-        //adding to database list
-        let key=toDueList.childByAutoId().key
-        let task=userTasks
-        toDueList.child(key!).setValue(task)
-    }
- */
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        particles = SKView(frame: CGRect(x: 0, y: 0, width: 666, height: 500))
-        particles.backgroundColor = UIColor.black
-        self.view.addSubview(particles)
-        
-        if let view = self.particles as SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "particles.scnp") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-        }
- */
         
         
         //Syncing with Database
-        handle=ref?.child("tasks").observe(.childAdded, with: {(snapshot) in
-            if let item=snapshot.value as? Task{
-                self.userList.append(item)
-                //self.myTableView.reloadData()
-                self.ref?.keepSynced(true)
-            }
-            
-        })
-        //firebase
-        //FirebaseApp.configure()
-        //toDueList=Database.database().reference().child("tasks")
-        
-        // Do any additional setup after loading the view.
-        /*
-        sceneView = SKView(frame: CGRect(x: 0, y: 0, width: 666, height: 500))
-        sceneView.backgroundColor = UIColor.black
-        self.view.addSubview(sceneView)
-        
-        if let view = self.sceneView as SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "particles") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-        }
- */
+//        handle=ref?.child("tasks").observe(.childAdded, with: {(snapshot) in
+//            if let item=snapshot.value as? Task{
+//                self.userList.append(item)
+//                //self.myTableView.reloadData()
+//                self.ref?.keepSynced(true)
+//            }
+//            
+//        })
+
     }
     
     

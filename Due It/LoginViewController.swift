@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
 
 
                 //go to to due list screen
-                self.goToApp()
+                self.goToAppNew()
             }
         }
     }
@@ -99,31 +99,14 @@ class LoginViewController: UIViewController {
     
     //Go to the to DUE list screen
     func goToApp(){
-        let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
-        let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        self.present(viewController, animated: true, completion: nil)
+        userTasks.removeAll();
+        
         //raab
         let dRef = Database.database().reference()
         //let tName: String = input.text!
         
         let userID = Auth.auth().currentUser?.uid
-        
-        list = tasks
-        userTasks.sort { (first, second) -> Bool in
-            if(first.taskCode > second.taskCode){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        list.removeAll()
-        for i in 0..<userTasks.count {
-            list.append(userTasks[i].getTaskName())
-        }
-        tasks = list;
-        
-        
+
         let r = dRef.child("users").child(userID!)
         r.observeSingleEvent(of: .value, with: { (snapshot) in
             // Get all user informaiton
@@ -155,25 +138,45 @@ class LoginViewController: UIViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        
-        
 
-//        r.observe(.value){ snapshot in
-//            for child in snapshot.children{
-//
-//                let task=child as! DataSnapshot
-////
-////                self.tasks.append(t)
-////                print("added t: ",t)
-//                //list.append(t)
-//            }
-//
-//        }
+        userTasks.sort { (first, second) -> Bool in
+            if(first.taskCode > second.taskCode){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        list.removeAll()
+        for i in 0..<userTasks.count {
+            list.append(userTasks[i].getTaskName())
+        }
+
+        
+        let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
+        let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.present(viewController, animated: true, completion: nil)
+        
         
         viewController.tasksExisting(dbTasks: tasks)
         
     }
+    
+    func goToAppNew(){
+        userTasks.removeAll();
+        
+        let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
+        let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.present(viewController, animated: true, completion: nil)
+        
+        
+    
+        viewController.tasksExisting(dbTasks: tasks)
+        
+        
+        
+    }
+
     
   
 }

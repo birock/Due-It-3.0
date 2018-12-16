@@ -173,8 +173,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         numFinished += 1
-        print("Tasks Completed: ", numFinished)
-        //self.tableView?.deleteRows(at: [indexPath], with: .automatic)
+
         list = tasks
         userTasks.sort { (first, second) -> Bool in
             if(first.taskCode > second.taskCode){
@@ -194,16 +193,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let userID = Auth.auth().currentUser?.uid
         dRef.child("users").child(userID!).child("tasks").removeValue()
         
-        for task in userTasks{
-            
-            
-            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).setValue(task.getTaskName())
-            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("urgencyCode").setValue(Int(task.urgencyCode))
-            
 
         for task in userTasks{
-
-
             dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).setValue(task.getTaskName())
             dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("urgencyCode").setValue(Int(task.urgencyCode))
 
@@ -217,26 +208,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
 
 
-        }
+        
         myTableView.reloadData()
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        userTasks.sort { (first, second) -> Bool in
-            if(first.taskCode > second.taskCode){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        list.removeAll()
-        for i in 0..<userTasks.count {
-            list.append(userTasks[i].getTaskName())
-        }
-        tasks = list;
+
         
         let dRef = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
@@ -255,6 +234,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             
         }
+        
+        userTasks.sort { (first, second) -> Bool in
+            if(first.taskCode > second.taskCode){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        list.removeAll()
+        for i in 0..<userTasks.count {
+            list.append(userTasks[i].getTaskName())
+        }
+        tasks = list;
 
         myTableView.reloadData()
     }
@@ -263,20 +256,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
-        list = tasks
-        userTasks.sort { (first, second) -> Bool in
-            if(first.taskCode > second.taskCode){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        list.removeAll()
-        for i in 0..<userTasks.count {
-            list.append(userTasks[i].getTaskName())
-        }
-        tasks = list;
+
         
         super.viewDidLoad()
         

@@ -13,7 +13,6 @@
 		3F86EB1421AF2E890099C1C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F86EB1321AF2E890099C1C1 /* LoginViewController.swift */; };
 		3FA85F8E21B1AC8400B8A3C3 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA85F8D21B1AC8400B8A3C3 /* EditTaskViewController.swift */; };
 		5B77BFED21B851E100B06A6C /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77BFEC21B851E100B06A6C /* Singleton.swift */; };
-		5B7B947F21B7924500977AE7 /* applause2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B7B947E21B7924500977AE7 /* applause2.mp3 */; };
 		5B843D6821ADFD3B00425B55 /* taskParticles.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 5B843D6621ADFD3B00425B55 /* taskParticles.scnp */; };
 		5B843D6921ADFD3B00425B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B843D6721ADFD3B00425B55 /* Assets.xcassets */; };
 		5B843D6B21AE553800425B55 /* particles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B843D6A21AE553800425B55 /* particles.sks */; };
@@ -22,6 +21,7 @@
 		5BB2386221C17C5900B29EFE /* Due_ItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FFA219A2D4D00020E7B /* Due_ItUITests.swift */; };
 		6146E49821B5D65A009D4D19 /* garden_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6146E49721B5D65A009D4D19 /* garden_background.png */; };
 		6146E49A21B5D6B8009D4D19 /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 6146E49921B5D6B7009D4D19 /* flower.png */; };
+		619FE5FB21C6DF7300441C88 /* applause2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 619FE5FA21C6DF7300441C88 /* applause2.mp3 */; };
 		61B2CB1421B5D32E006325A7 /* GardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B2CB1321B5D32D006325A7 /* GardenViewController.swift */; };
 		61DD3FDB219A2D4A00020E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */; };
 		61DD3FDD219A2D4A00020E7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FDC219A2D4A00020E7B /* ViewController.swift */; };
@@ -61,7 +61,6 @@
 		59C73E4BB5AF51A4457F823D /* Pods_Due_ItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Due_ItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B58384A21ACA68C00D8511E /* DueIt_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DueIt_Logo.png; path = Assets.xcassets/DueIt_Logo.imageset/DueIt_Logo.png; sourceTree = "<group>"; };
 		5B77BFEC21B851E100B06A6C /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		5B7B947E21B7924500977AE7 /* applause2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = applause2.mp3; path = ../../../Downloads/applause2.mp3; sourceTree = "<group>"; };
 		5B843D6621ADFD3B00425B55 /* taskParticles.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = taskParticles.scnp; sourceTree = "<group>"; };
 		5B843D6721ADFD3B00425B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		5B843D6A21AE553800425B55 /* particles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particles.sks; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		6146E49721B5D65A009D4D19 /* garden_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garden_background.png; sourceTree = SOURCE_ROOT; };
 		6146E49921B5D6B7009D4D19 /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = SOURCE_ROOT; };
+		619FE5FA21C6DF7300441C88 /* applause2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause2.mp3; sourceTree = SOURCE_ROOT; };
 		61B2CB1321B5D32D006325A7 /* GardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenViewController.swift; sourceTree = "<group>"; };
 		61DD3FD7219A2D4A00020E7B /* Due It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Due It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				61DD3FDC219A2D4A00020E7B /* ViewController.swift */,
 				5B929BCE21A9B69A00CCA9F7 /* Task.swift */,
 				61DD3FDE219A2D4A00020E7B /* Main.storyboard */,
-				5B7B947E21B7924500977AE7 /* applause2.mp3 */,
+				619FE5FA21C6DF7300441C88 /* applause2.mp3 */,
 				3F86EB1321AF2E890099C1C1 /* LoginViewController.swift */,
 				5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */,
 				3FA85F8D21B1AC8400B8A3C3 /* EditTaskViewController.swift */,
@@ -319,7 +319,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7B947F21B7924500977AE7 /* applause2.mp3 in Resources */,
 				3F86EB0E21AF2BB10099C1C1 /* DueIt_Logo.png in Resources */,
 				3F86EB1021AF2BEA0099C1C1 /* GoogleService-Info.plist in Resources */,
 				6146E49821B5D65A009D4D19 /* garden_background.png in Resources */,
@@ -331,6 +330,7 @@
 				5B843D6921ADFD3B00425B55 /* Assets.xcassets in Resources */,
 				3F86EB1221AF2BF20099C1C1 /* DueItLogo_Launch.png in Resources */,
 				61DD3FE0219A2D4A00020E7B /* Main.storyboard in Resources */,
+				619FE5FB21C6DF7300441C88 /* applause2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
