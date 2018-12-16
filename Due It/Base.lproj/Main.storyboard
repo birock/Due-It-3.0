@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="current_tasks" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AVf-Jz-tts">
-                                <rect key="frame" x="0.0" y="11" width="414" height="786"/>
+                                <rect key="frame" x="0.0" y="116" width="414" height="681"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -131,6 +131,19 @@
                                 </state>
                                 <connections>
                                     <segue destination="gLc-zw-Sgl" kind="presentation" id="Pu7-Gy-tAZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyG-uq-nVB">
+                                <rect key="frame" x="291" y="57" width="79" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="LogoutBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Rv-Jy-68l"/>
+                                    <segue destination="P5t-Tf-lji" kind="show" id="5OU-9z-KYe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -363,6 +376,7 @@
         <image name="garden_background.png" width="1666" height="1666"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Wlz-Yi-MBG"/>
         <segue reference="Jga-Tp-Lvv"/>
     </inferredMetricsTieBreakers>
 </document>

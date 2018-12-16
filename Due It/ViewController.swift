@@ -12,6 +12,7 @@ import AVFoundation
 import FirebaseDatabase
 import Firebase
 import SceneKit
+import FirebaseAuth
 
 var list = [String]()
 var numFinished = 0
@@ -20,6 +21,18 @@ var numFinished = 0
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBAction func LogoutBtn(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            //clear user tasks list
+            userTasks.removeAll()
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+    }
     var ref: DatabaseReference!
     var applauseSoundEffect: AVAudioPlayer?
     
