@@ -98,7 +98,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("..........complete..................")
             self.completeT(indexPath: indexPath)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "selectFlowerVC") as! SelectFlowerViewController
-            print(vc);
             
             self.show(vc, sender: nil);
             

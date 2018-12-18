@@ -45,10 +45,20 @@ class SelectFlowerViewController: UIViewController {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "gardenVC") as! GardenViewController
         vc.canEdit = true
-        vc.flowerName = flowers[flower];
+        vc.setFlower(flower: flowers[flower]);
+//        vc.flowerName = flowers[flower];
         
         self.show(vc, sender: nil)
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let gVC = segue.destination as! GardenViewController
+        gVC.flowerName = flowers[flower];
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        
     }
 
 
