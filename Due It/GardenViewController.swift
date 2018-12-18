@@ -42,9 +42,12 @@ class GardenViewController: UIViewController {
     }
     
     func addFlower(z1:CGFloat, z2:CGFloat){
+        let fl = flowerName;
         let pin = UIImageView(frame: CGRect(x: z1 - 20, y: z2 - 20, width: 40, height: 40))
-        pin.image = UIImage(named: flowerName)
+        pin.image = UIImage(named: fl)
         BackgroundImageView.addSubview(pin)
+        
+        
     }
     
     override func viewDidLoad() {
@@ -61,6 +64,10 @@ class GardenViewController: UIViewController {
         
         self.BackgroundImageView.isUserInteractionEnabled = true
         self.BackgroundImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func setFlower(flower: String){
+        flowerName = flower;
     }
     
     
