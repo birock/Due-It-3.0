@@ -260,7 +260,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         list.removeAll()
         for i in 0..<userTasks.count {
-            list.append(userTasks[i].getTaskName())
+            
+            // Formatting task due date for display
+            let formatter = DateFormatter()
+            formatter.dateFormat = "(MMMM d, YYYY)"
+            let taskDate = formatter.string(from: userTasks[i].getDueDate())
+            
+            list.append(userTasks[i].getTaskName() + " " + taskDate)
+            
         }
         tasks = list;
 

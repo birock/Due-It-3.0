@@ -17,6 +17,10 @@ class GardenViewController: UIViewController {
     @objc func tapAction(sender: UITapGestureRecognizer){
         // Get points for the UIImageView
         
+        print("canEdit: ", canEdit)
+        print("counter: ", counter)
+        print("flowerName: ", flowerName)
+        
         guard canEdit && counter > 0 else{
             return
         }
