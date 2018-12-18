@@ -118,7 +118,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sp9-gu-hEV" kind="presentation" id="Wlz-Yi-MBG"/>
+                                    <segue destination="sp9-gu-hEV" kind="show" id="O2k-NE-Vqp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chd-Cf-4gL">
@@ -150,13 +150,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="yae-cK-2ta"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZcJ-7E-wqu"/>
                     <connections>
                         <outlet property="myTableView" destination="AVf-Jz-tts" id="M0D-Nb-3Ty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260.86956521739131" y="132.58928571428572"/>
+            <point key="canvasLocation" x="242" y="118"/>
         </scene>
         <!--EditTaskViewController-->
         <scene sceneID="aVf-sv-CSQ">
@@ -370,13 +371,76 @@
             </objects>
             <point key="canvasLocation" x="261" y="-565"/>
         </scene>
+        <!--Select Flower View Controller-->
+        <scene sceneID="baJ-dr-biu">
+            <objects>
+                <viewController storyboardIdentifier="selectFlowerVC" id="tzs-Y6-dYJ" customClass="SelectFlowerViewController" customModule="Due_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qd7-9t-a9S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-Ls-4pI">
+                                <rect key="frame" x="87" y="218" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyz-mW-c5Y">
+                                <rect key="frame" x="350" y="289" width="46" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="76"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="rightBtnPressed:" destination="tzs-Y6-dYJ" eventType="touchUpInside" id="cfh-8z-czA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vw-jW-Gpi">
+                                <rect key="frame" x="20" y="287" width="46" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="76"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="leftBtnPressed:" destination="tzs-Y6-dYJ" eventType="touchUpInside" id="yHo-KP-rMl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select a flower." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBV-RM-5EO">
+                                <rect key="frame" x="47" y="121" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLK-Pz-trx">
+                                <rect key="frame" x="167" y="546" width="81" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Select"/>
+                                <connections>
+                                    <action selector="selectBtnPressed:" destination="tzs-Y6-dYJ" eventType="touchUpInside" id="jxX-AP-LtS"/>
+                                    <segue destination="sp9-gu-hEV" kind="show" id="HZI-Su-DGm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Hd1-Au-ilg"/>
+                    </view>
+                    <connections>
+                        <outlet property="flowerImage" destination="IYI-Ls-4pI" id="kGQ-Kk-mB8"/>
+                        <outlet property="leftBtn" destination="3vw-jW-Gpi" id="FcS-uA-jGb"/>
+                        <outlet property="rightBtn" destination="Nyz-mW-c5Y" id="aLa-VJ-Tdq"/>
+                        <outlet property="selectBtn" destination="LLK-Pz-trx" id="H5Z-eC-bKg"/>
+                        <segue destination="BYZ-38-t0r" kind="push" id="hoo-fD-yyP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPq-cx-6nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018.840579710145" y="-565.17857142857144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="DueItLogo_Launch.png" width="900" height="300"/>
         <image name="garden_background.png" width="1666" height="1666"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wlz-Yi-MBG"/>
+        <segue reference="O2k-NE-Vqp"/>
         <segue reference="Jga-Tp-Lvv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,8 +10,9 @@ import UIKit
 
 class GardenViewController: UIViewController {
     @IBOutlet weak var BackgroundImageView: UIImageView!
-    var canEdit: Bool = false
+    var canEdit: Bool = true
     var counter = 1
+    var flowerName = ""
     
     @objc func tapAction(sender: UITapGestureRecognizer){
         // Get points for the UIImageView
@@ -31,14 +32,14 @@ class GardenViewController: UIViewController {
         singleton?.coordinates?.append((z1,z2))
         
         
-        print("Touched point (\(z1), \(z2)")
+
         addFlower(z1: z1,z2: z2)
         counter -= 1
     }
     
     func addFlower(z1:CGFloat, z2:CGFloat){
         let pin = UIImageView(frame: CGRect(x: z1 - 20, y: z2 - 20, width: 40, height: 40))
-        pin.image = UIImage(named: "flower.png")
+        pin.image = UIImage(named: flowerName)
         BackgroundImageView.addSubview(pin)
     }
     

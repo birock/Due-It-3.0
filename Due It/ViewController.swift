@@ -97,9 +97,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //call complete task function
             print("..........complete..................")
             self.completeT(indexPath: indexPath)
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "gardenVC") as! GardenViewController
-            vc.canEdit = true
-            self.show(vc, sender: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "selectFlowerVC") as! SelectFlowerViewController
+            print(vc);
+            
+            self.show(vc, sender: nil);
+            
         }
         
         editTask.backgroundColor = .blue
