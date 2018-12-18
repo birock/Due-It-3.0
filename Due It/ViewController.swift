@@ -97,7 +97,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //call complete task function
             print("..........complete..................")
             self.completeT(indexPath: indexPath)
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "selectFlowerVC") as! SelectFlowerViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "gardenVC") as! GardenViewController
+            vc.canEdit = true;
             
             self.show(vc, sender: nil);
             
@@ -229,25 +230,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
-        
-        let dRef = Database.database().reference()
-        let userID = Auth.auth().currentUser?.uid
-        dRef.child("users").child(userID!).child("tasks").removeValue()
-        
-        for task in userTasks{
-            
-            
-            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).setValue(task.getTaskName())
-            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("urgencyCode").setValue(Int(task.urgencyCode))
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let dateString = dateFormatter.string(from: task.getDueDate())
-            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("date").setValue(dateString)
-            
-            
-        }
         
         userTasks.sort { (first, second) -> Bool in
             if(first.taskCode > second.taskCode){
@@ -258,6 +240,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
         list.removeAll()
+        
         for i in 0..<userTasks.count {
             
             // Formatting task due date for display
@@ -277,6 +260,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
+        userTasks.sort { (first, second) -> Bool in
+            if(first.taskCode > second.taskCode){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        list.removeAll()
+        
+        for i in 0..<userTasks.count {
+            
+            // Formatting task due date for display
+            let formatter = DateFormatter()
+            formatter.dateFormat = "(MMMM d, YYYY)"
+            let taskDate = formatter.string(from: userTasks[i].getDueDate())
+            
+            list.append(userTasks[i].getTaskName() + " " + taskDate)
+            
+        }
+        tasks = list;
 
         
         super.viewDidLoad()

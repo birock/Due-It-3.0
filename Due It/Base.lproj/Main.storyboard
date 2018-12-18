@@ -369,70 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFT-eo-cf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="-565"/>
-        </scene>
-        <!--Select Flower View Controller-->
-        <scene sceneID="baJ-dr-biu">
-            <objects>
-                <viewController storyboardIdentifier="selectFlowerVC" id="tzs-Y6-dYJ" customClass="SelectFlowerViewController" customModule="Due_It" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qd7-9t-a9S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-Ls-4pI">
-                                <rect key="frame" x="87" y="218" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyz-mW-c5Y">
-                                <rect key="frame" x="350" y="289" width="46" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="76"/>
-                                <state key="normal" title="&gt;"/>
-                                <connections>
-                                    <action selector="rightBtnPressed:" destination="tzs-Y6-dYJ" eventType="touchUpInside" id="cfh-8z-czA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vw-jW-Gpi">
-                                <rect key="frame" x="20" y="287" width="46" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="76"/>
-                                <state key="normal" title="&lt;"/>
-                                <connections>
-                                    <action selector="leftBtnPressed:" destination="tzs-Y6-dYJ" eventType="touchUpInside" id="yHo-KP-rMl"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select a flower." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBV-RM-5EO">
-                                <rect key="frame" x="47" y="121" width="320" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLK-Pz-trx">
-                                <rect key="frame" x="167" y="546" width="81" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Select"/>
-                                <connections>
-                                    <action selector="selectBtnPressed:" destination="tzs-Y6-dYJ" eventType="touchUpInside" id="jxX-AP-LtS"/>
-                                    <segue destination="sp9-gu-hEV" kind="show" id="HZI-Su-DGm"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Hd1-Au-ilg"/>
-                    </view>
-                    <connections>
-                        <outlet property="flowerImage" destination="IYI-Ls-4pI" id="kGQ-Kk-mB8"/>
-                        <outlet property="leftBtn" destination="3vw-jW-Gpi" id="FcS-uA-jGb"/>
-                        <outlet property="rightBtn" destination="Nyz-mW-c5Y" id="aLa-VJ-Tdq"/>
-                        <outlet property="selectBtn" destination="LLK-Pz-trx" id="H5Z-eC-bKg"/>
-                        <segue destination="BYZ-38-t0r" kind="push" id="hoo-fD-yyP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mPq-cx-6nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1018.840579710145" y="-565.17857142857144"/>
+            <point key="canvasLocation" x="241" y="-621"/>
         </scene>
     </scenes>
     <resources>
@@ -440,7 +377,6 @@
         <image name="garden_background.png" width="1666" height="1666"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HZI-Su-DGm"/>
-        <segue reference="hoo-fD-yyP"/>
+        <segue reference="Jga-Tp-Lvv"/>
     </inferredMetricsTieBreakers>
 </document>

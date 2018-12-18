@@ -99,14 +99,10 @@ class LoginViewController: UIViewController {
     
     //Go to the to DUE list screen
     func goToApp(){
-        userTasks.removeAll();
         
         //raab
         let dRef = Database.database().reference()
-        //let tName: String = input.text!
-        
         let userID = Auth.auth().currentUser?.uid
-
         let r = dRef.child("users").child(userID!)
         r.observeSingleEvent(of: .value, with: { (snapshot) in
             // Get all user informaiton
@@ -130,10 +126,7 @@ class LoginViewController: UIViewController {
                     
                     let newTask = Task(name: key as! String, urgency: urgencyCode!, date: dateObj!)
                     userTasks.append(newTask)
-                    
                 }
-                
-                
             }
         }) { (error) in
             print(error.localizedDescription)
@@ -148,9 +141,18 @@ class LoginViewController: UIViewController {
             }
         }
         list.removeAll()
+        
         for i in 0..<userTasks.count {
-            list.append(userTasks[i].getTaskName())
+            
+            // Formatting task due date for display
+            let formatter = DateFormatter()
+            formatter.dateFormat = "(MMMM d, YYYY)"
+            let taskDate = formatter.string(from: userTasks[i].getDueDate())
+            
+            list.append(userTasks[i].getTaskName() + " " + taskDate)
+            
         }
+        tasks = list;
 
         
         let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
@@ -169,9 +171,7 @@ class LoginViewController: UIViewController {
         let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         self.present(viewController, animated: true, completion: nil)
         
-        
-    
-        //viewController.tasksExisting(dbTasks: tasks)
+
         
         
         
