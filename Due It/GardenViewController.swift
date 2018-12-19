@@ -59,7 +59,7 @@ class GardenViewController: UIViewController {
         let userID = Auth.auth().currentUser?.uid
         let r = dRef.child("users").child(userID!)
         r.observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get all user informaiton
+            // Get all user information
             let value = snapshot.value as? NSDictionary
             //get a dictionary full of task NSDictionaries
             let coords = value?["flowers"] as? NSDictionary
@@ -71,7 +71,11 @@ class GardenViewController: UIViewController {
                     singleton?.coordinates?.append((coord[0], coord[1]))
                 }
                 
-                
+                for coordinate in singleton!.coordinates!{
+                    let (z1, z2) = coordinate
+                    self.addFlower(z1: z1,z2: z2)
+                }
+            
             }
         }) { (error) in
             print(error.localizedDescription)

@@ -127,6 +127,11 @@ class LoginViewController: UIViewController {
                     let newTask = Task(name: key as! String, urgency: urgencyCode!, date: dateObj!)
                     userTasks.append(newTask)
                 }
+                
+                let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
+                let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                
+                self.present(viewController, animated: true, completion: nil)
             }
         }) { (error) in
             print(error.localizedDescription)
@@ -155,12 +160,13 @@ class LoginViewController: UIViewController {
         tasks = list;
 
         
-        let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
-        let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        self.present(viewController, animated: true, completion: nil)
+//        let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
+//        let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//
+//        self.present(viewController, animated: true, completion: nil)
         
-        
-        viewController.tasksExisting(dbTasks: tasks)
+//        viewController.tasksExisting(dbTasks: tasks)
+   
         
     }
     
